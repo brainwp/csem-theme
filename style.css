@@ -17,6 +17,85 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+
+/**
+ * GERAL - Menu Lateral com toggle
+*/
+.menu-logo-toggle {
+    position: fixed;
+    height: 300vh;
+    width: 45vw;
+    top:0;
+    left:-50vw;
+    background: #ebebeb;
+    transition:1s ease all;
+    z-index: 99;
+}
+.menu-logo-toggle.open {
+    box-shadow: 51vw 65px 215px 106px rgba(0,0,0,0.67);
+    transition: 1200ms ease all;
+    left: 0;
+} 
+
+body.admin-bar .menu-logo-toggle {
+    top:32px;
+}
+.menu-logo-toggle .site-branding {
+    padding-top: 70px;
+    margin-left: 12vw;
+}
+.menu-logo-toggle .site-branding .site-title, .menu-logo-toggle .site-branding .site-description {
+    display: none;
+}
+#site-navigation {
+    margin-left: 12vw;
+}
+#site-navigation ul {
+    display: block;
+    padding-top: 30px;
+}
+#site-navigation ul li {
+    display: inline-block;
+    width: 100%;
+    padding-bottom:15px;
+}
+#site-navigation ul li a {
+    font-size: 18px;
+}
+header#masthead {
+    background: none;
+    box-shadow: none;
+    width:128px;
+    margin-top:30vh;
+    z-index: 999;
+}
+header#masthead .csem-open-menu {
+    background: #ca1921;
+    border-radius: 50%;
+    display: inline-block;
+    width: 64px;
+    height:64px;
+    margin-left: 15px;
+}
+header#masthead .csem-open-menu img {
+    width: 48px;
+    height: 48px;
+    margin-left: 7px;
+    margin-bottom: 8px;
+}
+.csem-open-menu.open img.open {
+    display: none;
+}
+.csem-open-menu img.closed {
+    display: none;
+}
+.csem-open-menu.open img.closed {
+    display: inline;
+    width: 43px !important;
+    height: 43px !important;
+    margin-left: 11px !important;
+    margin-bottom: 11px !important;
+}
 /**
  * Home - Section Hero
 */
@@ -39,14 +118,6 @@ body.home .hero-content-style1 .btn-danger{
 }
 body.home .hero-content-style1 h2.hero-large-text {
     padding-bottom: 6vh;
-}
-body.home header#masthead {
-    transition: 700ms ease all;
-    opacity: 0;
-}
-body.home header#masthead.show {
-    transition: 700ms ease all;
-    opacity: 1;
 }
 @media screen and (max-width: 900px ) {
     body.home .hero__content {

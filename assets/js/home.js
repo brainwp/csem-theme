@@ -4,15 +4,14 @@
  *
 */
 jQuery(document).ready(function($) {
+	if ( 0 === $( 'body.home').length ) {
+		return;
+	}
 	/**
 	 *
 	 * Checa se o elemento esta visivel no scroll
 	 *
 	*/
-	if ( 0 === $( 'body.home').length ) {
-		return;
-	}
-	console.log( 'qaq');
 	$( 'a[href="#proxima"]' ).on( 'click', function( e) {
 		var $el_next_section = $( this ).parent().parent().parent().next( 'section' );
 		$( 'html, body' ).animate({
