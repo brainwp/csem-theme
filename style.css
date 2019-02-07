@@ -17,3 +17,40 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+/**
+ * Home - Section Hero
+*/
+body.home #hero {
+    height: 100vh;
+}
+body.home .hero-content-style1 .btn {
+    border-radius: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border:none !important;
+    transition:500ms ease all;
+}
+body.home .hero-content-style1 .btn:hover {
+    box-shadow: -7px 6px 52px -3px rgba(0,0,0,0.70) !important;
+    transition: 300ms ease all;
+}
+body.home .hero-content-style1 .btn-danger{
+    background: #550101 !important;
+}
+body.home .hero-content-style1 h2.hero-large-text {
+    padding-bottom: 6vh;
+}
+body.home header#masthead {
+    transition: 700ms ease all;
+    opacity: 0;
+}
+body.home header#masthead.show {
+    transition: 700ms ease all;
+    opacity: 1;
+}
+@media screen and (max-width: 900px ) {
+    body.home .hero__content {
+        padding-top:25vh;
+        padding-bottom: 0;
+    }
+}
