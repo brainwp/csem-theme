@@ -22,8 +22,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * GERAL - Menu Lateral com toggle
 */
 .menu-logo-toggle {
-    position: fixed;
-    height: 300vh;
+    position: absolute;
     width: 45vw;
     top:0;
     left:-50vw;
@@ -36,10 +35,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     transition: 1200ms ease all;
     left: 0;
 } 
-
-body.admin-bar .menu-logo-toggle {
-    top:32px;
-}
 .menu-logo-toggle .site-branding {
     padding-top: 70px;
     margin-left: 12vw;
