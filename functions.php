@@ -148,24 +148,6 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 					'options' => $option_pages
 					)
 		) );
-    // Featured page content source
-    $wp_customize->add_setting( coletivo_add_settings('coletivo_fazer-parte_content_source_1'),
-        array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'default'           => 'content',
-        )
-    );
-    $wp_customize->add_control( coletivo_add_settings('coletivo_fazer-parte_content_source_1'),
-        array(
-            'label' 		=> esc_html__('Content source', 'coletivo'),
-            'section' 		=> 'coletivo_fazer-parte_content',
-            'type'          => 'select',
-            'choices'       => array(
-                'content' => esc_html__( 'Full Page Content', 'coletivo' ),
-                'excerpt' => esc_html__( 'Page Excerpt', 'coletivo' ),
-            ),
-        )
-    );
     // More Button
 	$wp_customize->add_setting( coletivo_add_settings('coletivo_fazer-parte_more_text_1'),
 		array(
@@ -197,24 +179,6 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 					'options' => $option_pages
 					)
 		) );
-    // Featured page content source
-    $wp_customize->add_setting( coletivo_add_settings('coletivo_fazer-parte_content_source_2'),
-        array(
-            'sanitize_callback' => 'sanitize_text_field',
-            'default'           => 'content',
-        )
-    );
-    $wp_customize->add_control( coletivo_add_settings('coletivo_fazer-parte_content_source_2'),
-        array(
-            'label' 		=> esc_html__('Content source', 'coletivo'),
-            'section' 		=> 'coletivo_fazer-parte_content',
-            'type'          => 'select',
-            'choices'       => array(
-                'content' => esc_html__( 'Full Page Content', 'coletivo' ),
-                'excerpt' => esc_html__( 'Page Excerpt', 'coletivo' ),
-            ),
-        )
-    );
     // More Button
 	$wp_customize->add_setting( coletivo_add_settings('coletivo_fazer-parte_more_text_2'),
 		array(

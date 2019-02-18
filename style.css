@@ -34,12 +34,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     box-shadow: 51vw 65px 215px 106px rgba(0,0,0,0.67);
     transition: 1200ms ease all;
     left: 0;
-} 
+}
 @media screen and ( max-width: 900px ) {
     .menu-logo-toggle {
         width:100%;
         left:-101vw;
-    } 
+    }
 }
 .menu-logo-toggle .site-branding {
     padding-top: 70px;
@@ -131,4 +131,98 @@ body.home .hero-content-style1 h2.hero-large-text {
         padding-top:25vh;
         padding-bottom: 0;
     }
+}
+/**
+ *
+ * Home - Section Fazer Parte
+ *
+*/
+.section-fazer-parte {
+	padding-top:0 !important;
+}
+.section-fazer-parte .container {
+	width:100%;
+	max-width: 100%;
+	margin: 0;
+	padding:0;
+}
+.section-fazer-parte .section-title-area {
+	width: 50%;
+	margin-bottom: 0 !important;
+	padding-bottom: 50px;
+}
+.section-fazer-parte .section-title-area.fazer-parte-content-1 {
+	background:#e8e8e8;
+	float:left;
+	padding-left:10vw;
+}
+.section-fazer-parte .section-title-area.fazer-parte-content-2 {
+	background: #d8d8d8;
+	float:right;
+	padding-right:10vw;
+}
+.section-fazer-parte .section-desc {
+	padding-right: 35px;
+	padding-left: 35px;
+	text-align: left;
+	font-size: 19px;
+}
+.section-fazer-parte .fazer-parte-content-2 h2.section-title {
+	background: #d8d8d8;
+	display: inline-block;
+	position: absolute;
+	max-width: 350px;
+	text-align: left;
+	padding-left: 35px;
+	font-size: 35px;
+	border-bottom-right-radius: 50px;
+	padding-bottom: 20px;
+}
+.section-fazer-parte .fazer-parte-content-2 .the-thumb {
+	width: 100%;
+	padding-top: 80px;
+}
+.section-fazer-parte .fazer-parte-content-2 .the-thumb img {
+	border-top-right-radius: 50px;
+}
+
+.section-fazer-parte .fazer-parte-content-1 .the-thumb img {
+	border-bottom-left-radius: 50px;
+}
+.section-fazer-parte .fazer-parte-content-1 h2.section-title {
+	background:#e8e8e8;
+	display:block;
+	position: absolute;
+	max-width: 350px;
+	text-align: left;
+	padding-left: 35px;
+	font-size: 35px;
+	border-top-left-radius: 50px;
+	margin-top: -103px;
+	margin-left: 120px;
+	padding-top: 20px;
+}
+.section-fazer-parte .btn {
+	float:left;
+	margin-left: 35px;
+	border-radius: 30px;
+}
+@media screen and ( max-width: 1000px ) {
+	.section-fazer-parte .section-title-area.fazer-parte-content-1 {
+		padding-left:0;
+	}
+	.section-fazer-parte .section-title-area.fazer-parte-content-2 {
+		padding-right:0;
+	}
+}
+@media screen and ( max-width: 900px ) {
+	.section-fazer-parte .section-title-area.fazer-parte-content-1 {
+		width:100%;
+	}
+	.section-fazer-parte .section-title-area.fazer-parte-content-2 {
+		width:100%;
+	}
+	.section-fazer-parte .fazer-parte-content-1 h2.section-title {
+		right:0;
+	}
 }

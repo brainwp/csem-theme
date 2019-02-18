@@ -1,7 +1,8 @@
 <?php
 $coletivo_fazerparte_id       = coletivo_get_theme_mod( 'coletivo_fazer-parte_id', esc_html__('fazer-parte', 'coletivo') );
 $coletivo_fazerparte_disable  = coletivo_get_theme_mod( 'coletivo_fazer-parte_disable' ) == 1 ? true : false ;
-$coletivo_fazerparte_more_text = coletivo_get_theme_mod( 'coletivo_fazer-parte_more_text', esc_html__('Discover', 'coletivo') );
+$coletivo_fazerparte_more_text_1 = coletivo_get_theme_mod( 'coletivo_fazer-parte_more_text_1', esc_html__('Discover', 'coletivo') );
+$coletivo_fazerparte_more_text_2 = coletivo_get_theme_mod( 'coletivo_fazer-parte_more_text_2', esc_html__('Discover', 'coletivo') );
 $coletivo_fazerparte_desc     = coletivo_get_theme_mod( 'coletivo_fazer-parte_desc');
 if ( coletivo_is_selective_refresh() ) {
     $coletivo_fazerparte_disable = false;
@@ -19,21 +20,17 @@ if ( coletivo_is_selective_refresh() ) {
                                     $post = get_post( $post_id );
                                     setup_postdata( $post );
                                 ?>
-                                <h2 class="section-title"><?php the_title(); ?></h2>
-		                            <div class="section-desc">
-		                              <?php
-		                                if ( $content_source == 'excerpt' ) {
-		                                    the_excerpt();
-		                                } else {
-		                                    the_content();
-		                                }
-
-		                                ?>
-		                            </div>
+                                <div class="the-thumb">
+                                    <?php the_post_thumbnail( 'large' );?>
+                                    <h2 class="section-title"><?php the_title(); ?></h2>
+                                </div><!-- .the-thumb -->
+                                <div class="section-desc">
+                                    <?php the_excerpt();?>
+                                </div>
                                 <br />
-                                <?php if ( $coletivo_fazerparte_more_text != '' ) : ?>
+                                <?php if ( $coletivo_fazerparte_more_text_1 != '' ) : ?>
 		                          <a id="fazerparte" class="btn btn-theme-primary btn-lg" href="<?php echo esc_url( get_permalink()) ;?>">
-									   <?php echo esc_html( $coletivo_fazerparte_more_text ); ?>
+									   <?php echo esc_html( $coletivo_fazerparte_more_text_1 ); ?>
                                     </a>
                                 <?php endif;?>
 		                    </div>
@@ -45,21 +42,18 @@ if ( coletivo_is_selective_refresh() ) {
                                     $post = get_post( $post_id );
                                     setup_postdata( $post );
                                 ?>
-                                <h2 class="section-title"><?php the_title(); ?></h2>
-                                    <div class="section-desc">
-                                      <?php
-                                        if ( $content_source == 'excerpt' ) {
-                                            the_excerpt();
-                                        } else {
-                                            the_content();
-                                        }
+                                <div class="the-thumb">
+                                    <h2 class="section-title"><?php the_title(); ?></h2>
+                                    <?php the_post_thumbnail( 'large' );?>
+                                </div><!-- .the-thumb -->
+                                <div class="section-desc">
+                                    <?php the_excerpt();?>
+                                </div>
 
-                                        ?>
-                                    </div>
                                 <br />
-                                <?php if ( $coletivo_fazerparte_more_text != '' ) : ?>
-                                  <a id="fazerparte" class="btn btn-theme-primary btn-lg" href="<?php echo esc_url( get_permalink()) ;?>">
-                                       <?php echo esc_html( $coletivo_fazerparte_more_text ); ?>
+                                <?php if ( $coletivo_fazerparte_more_text_2 != '' ) : ?>
+                                  <a class="btn btn-theme-primary btn-lg" href="<?php echo esc_url( get_permalink()) ;?>">
+                                       <?php echo esc_html( $coletivo_fazerparte_more_text_2 ); ?>
                                     </a>
                                 <?php endif;?>
                             </div>
