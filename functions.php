@@ -201,3 +201,14 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 
 }
 add_action( 'coletivo_customize_after_register', 'csem_coletivo_customize_after_register', 10, 1 );
+
+/**
+ * Adiciona shortcode para AGENDA
+ * @return type
+ */
+function csem_agenda() {
+	ob_start();
+	get_template_part( 'section-parts/shortcode-agenda' );
+	return ob_get_clean();
+}
+add_shortcode( 'csem_agenda', 'csem_agenda' );

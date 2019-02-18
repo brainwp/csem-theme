@@ -17,7 +17,14 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
-
+/**
+ *
+ * GERAL - Botões
+ *
+*/
+.btn {
+	border-radius: 30px !important;
+}
 /**
  * GERAL - Menu Lateral com toggle
 */
@@ -225,4 +232,67 @@ body.home .hero-content-style1 h2.hero-large-text {
 	.section-fazer-parte .fazer-parte-content-1 h2.section-title {
 		right:0;
 	}
+}
+
+/**
+ *
+ * Shortcode AGENDA
+ *
+*/
+.agenda-container {
+	clear:both;
+	width:100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+}
+.agenda-container a {
+	text-decoration: none !important;
+}
+.agenda-container h3.the-title {
+	font-size: 19px;
+	width:81%;
+	color:white;
+	clear: both;
+	text-align: left;
+	text-shadow: 1px 1px 9px rgba(150, 150, 150, 0.48);
+	padding-left:10px;
+	min-height: 87px;
+}
+.agenda-container .the-thumb {
+	height: 335px;
+	padding-top:200px;
+	background-position: center top;
+	background-size: cover;
+	box-shadow:inset 1px -40px 67px 0px rgba(0, 0, 0, 0.50)
+}
+.agenda-container .the-date {
+	display: inline-block;
+	background: #f1ca61;
+	padding-top:10px;
+	padding-bottom:20px;
+	font-size:27px;
+	color:#333333;
+	font-family: 'Open Sans', sans-serif;
+	float: left;
+	padding-left:15px;
+	padding-right: 15px;
+	clear: both;
+	margin-top:-10px;
+}
+.agenda-container .the-time {
+	color:#ad1f26;
+	text-transform:uppercase;
+	display: inline-block;
+	width: 100%;
+	clear: both;
+	float: left;
+	text-align: center;
+	margin-top:-20px;
+}
+#agenda h2.section-title {
+	color:#333333;
+}
+a#featuredpage {
+	display: none;
 }
