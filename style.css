@@ -243,8 +243,12 @@ body.home .hero-content-style1 h2.hero-large-text {
 	clear:both;
 	width:100%;
 	float: left;
-	display: flex;
-	justify-content: center;
+}
+@media screen and ( min-width: 900px ) {
+	.agenda-container {
+		display: flex;
+		justify-content: center;
+	}
 }
 .agenda-container a {
 	text-decoration: none !important;
@@ -295,4 +299,13 @@ body.home .hero-content-style1 h2.hero-large-text {
 }
 a#featuredpage {
 	display: none;
+}
+@media screen and ( max-width: 899px ) {
+	.agenda-container .each-agenda {
+		margin-bottom: 25px;
+	}
+	.agenda-btn-container {
+		padding-top:40px;
+		clear: both;
+	}
 }
