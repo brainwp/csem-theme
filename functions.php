@@ -49,7 +49,7 @@ function coletivo_site_header() {
  * Adiciona seções ao tema coletivo
  */
 function csem_coletivo_customizer_sections( $sections ) {
-	return $sections .= ',fazer-parte';
+	return $sections .= ',fazer-parte,ultimos_sociais';
 }
 add_filter( 'coletivo_sections_order_default_value', 'csem_coletivo_customizer_sections' );
 function csem_coletivo_customize_after_register( $wp_customize ) {
@@ -199,6 +199,124 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
     /*  End of Section Featured Page
     /*------------------------------------------------------------------------*/
 
+	/*------------------------------------------------------------------------*/
+    /*  Section: Ultimos redes sociais
+    /*------------------------------------------------------------------------*/
+
+    $wp_customize->add_panel( 'coletivo_ultimos_sociais',
+		array(
+			'priority'    => coletivo_get_customizer_priority( 'coletivo_ultimos_sociais' ),
+			'title'           => esc_html__( 'Section: Ultimos posts nas redes', 'coletivo' ),
+			'description'     => '',
+			'active_callback' => 'coletivo_showon_frontpage'
+		)
+	);
+	$wp_customize->add_section( 'coletivo_ultimos_sociais_settings',
+		array(
+			'priority'    => 3,
+			'title'       => esc_html__( 'Section Settings', 'coletivo' ),
+			'description' => '',
+			'panel'       => 'coletivo_ultimos_sociais',
+		)
+	);
+	// Show Content
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_disable'),
+		array(
+			'sanitize_callback' => 'coletivo_sanitize_checkbox',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_disable'),
+		array(
+			'type'        => 'checkbox',
+			'label'       => esc_html__('Hide this section?', 'coletivo'),
+			'section'     => 'coletivo_ultimos_sociais_settings',
+			'description' => esc_html__('Check this box to hide this section.', 'coletivo'),
+		)
+	);
+	// Title
+    $wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_title'),
+        array(
+            'sanitize_callback' => 'sanitize_text_field',
+            'default'           => '',
+        )
+    );
+    $wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_title'),
+        array(
+            'label' 		=> esc_html__('Title section in customizer', 'coletivo'),
+            'section' 		=> 'coletivo_ultimos_sociais_settings',
+            'description'   => esc_html__( 'This title is only showed in customizer', 'coletivo'),
+        )
+    );
+
+	// Section ID
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_id'),
+		array(
+			'sanitize_callback' => 'coletivo_sanitize_text',
+			'default'           => esc_html__('#ultimos-sociais', 'coletivo'),
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_id'),
+		array(
+			'label' 		=> esc_html__('Section ID:', 'coletivo'),
+			'section' 		=> 'coletivo_ultimos_sociais_settings',
+			'description'   => esc_html__( 'The section id, we will use this for link anchor.', 'coletivo' )
+		)
+	);
+
+	$wp_customize->add_section( 'coletivo_ultimos_sociais_content' ,
+		array(
+			'priority'    => 6,
+			'title'       => esc_html__( 'Section Content', 'coletivo' ),
+			'panel'       => 'coletivo_ultimos_sociais',
+		)
+	);
+    // Textarea redes
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_yt'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_yt'),
+		array(
+			'label'     	=> esc_html__('URL do YouTube', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+			'description'   => '',
+		)
+	);
+
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_instagram'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_instagram'),
+		array(
+			'label'     	=> esc_html__('URL do Instagram', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+			'description'   => '',
+		)
+	);
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_fb'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_fb'),
+		array(
+			'label'     	=> esc_html__('ID da Página no Facebook', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+			'description'   => 'Verifique o ID da página em: https://findmyfbid.com/',
+		)
+	);
+
+    /*------------------------------------------------------------------------*/
+    /*  End of Section Featured Page
+    /*------------------------------------------------------------------------*/
+
 }
 add_action( 'coletivo_customize_after_register', 'csem_coletivo_customize_after_register', 10, 1 );
 
@@ -212,3 +330,6 @@ function csem_agenda() {
 	return ob_get_clean();
 }
 add_shortcode( 'csem_agenda', 'csem_agenda' );
+
+// Classe para seção ultimos posts das redes
+require_once get_stylesheet_directory() . '/inc/class-load-last-post-social-networks.php';
