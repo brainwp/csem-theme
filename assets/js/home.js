@@ -49,5 +49,28 @@ jQuery(document).ready(function($) {
 			set_fazer_parte_dynamic_styles();
 		});
 	}
+	/**
+	 *
+	 * Carrega via AJAX os itens os ultimos posts das redes sociais
+	 * 
+	*/
+	if ( 0 === $( '#facebook-content').length ) {
+		return;
+	}
+	var data_fb = {
+		action: 'csem_get_last_socials',
+		network: 'facebook'
+	}
+	$.get( ajax.url, data_fb, function( response ) {
+		$( '#facebook-content' ).html( response );
+	});
+
+	var data_yt = {
+		action: 'csem_get_last_socials',
+		network: 'youtube'
+	}
+	$.get( ajax.url, data_yt, function( response ) {
+		$( '#youtube-content' ).html( response );
+	});
 
 });

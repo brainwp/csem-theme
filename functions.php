@@ -10,6 +10,7 @@
 function csem_theme_scripts() {
 	// Enfileira o script
 	wp_enqueue_script( 'csem-theme-home', get_stylesheet_directory_uri() . '/assets/js/home.js', array( 'jquery'), '1.0', true );
+	wp_localize_script( 'csem-theme-home', 'ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 	wp_enqueue_script( 'csem-theme-geral', get_stylesheet_directory_uri() . '/assets/js/geral.js', array( 'jquery'), '1.0', true );
 
 }
@@ -194,7 +195,6 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 		)
 	);
 
-
     /*------------------------------------------------------------------------*/
     /*  End of Section Featured Page
     /*------------------------------------------------------------------------*/
@@ -312,6 +312,20 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 			'description'   => 'Verifique o ID da página em: https://findmyfbid.com/',
 		)
 	);
+
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_fb_url'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_fb_url'),
+		array(
+			'label'     	=> esc_html__('Link da página no Facebook', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+		)
+	);
+
 
     /*------------------------------------------------------------------------*/
     /*  End of Section Featured Page
