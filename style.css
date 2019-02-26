@@ -349,3 +349,20 @@ a#featuredpage {
 .section-ultimos-sociais #instagram-content .each-social span.icon {
 	background-image: url( 'assets/images/instagram-icon.png' );
 }
+
+.wpcf7-form-control.wpcf7-submit {
+	border-radius: 30px !important;
+	width:inherit !important;
+}
+.section-contact .address-contact span {
+	color: #ad1f26;
+}
+.section-contact {
+	background: #ebebeb;
+}
+.section-contact .row {
+	background-image: url( 'assets/images/cropped-logo.png' );
+	background-position:top center;
+	background-repeat: no-repeat;
+	padding-top: 100px;
+}
