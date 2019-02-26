@@ -73,4 +73,12 @@ jQuery(document).ready(function($) {
 		$( '#youtube-content' ).html( response );
 	});
 
+	var data_insta = {
+		action: 'csem_get_last_socials',
+		network: 'instagram'
+	}
+	$.get( ajax.url, data_insta, function( response ) {
+		$( '#instagram-content' ).html( response );
+	});
+
 });

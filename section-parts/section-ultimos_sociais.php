@@ -12,6 +12,8 @@ $coletivo_ultimos_sociais_disable  = coletivo_get_theme_mod( 'coletivo_ultimos_s
                 </div><!-- #facebook-content.content-socials col-md-4 -->
                 <div class="content-socials col-md-4" id="youtube-content">
                 </div><!-- #youtube-content.content-socials col-md-4 -->
+                <div class="content-socials col-md-4" id="instagram-content">
+                </div><!-- #youtube-content.content-socials col-md-4 -->
 
             </div>
     </div>

@@ -272,13 +272,13 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 		)
 	);
     // Textarea redes
-	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_yt'),
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_yt_url'),
 		array(
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '',
 		)
 	);
-	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_yt'),
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_yt_url'),
 		array(
 			'label'     	=> esc_html__('URL do YouTube', 'coletivo'),
 			'section'       => 'coletivo_ultimos_sociais_content',
@@ -286,19 +286,48 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_instagram'),
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_yt_id'),
 		array(
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => '',
 		)
 	);
-	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_instagram'),
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_yt_id'),
+		array(
+			'label'     	=> esc_html__('ID do Canal no Youtube', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+			'description'   => 'Verique o ID pelo site: https://commentpicker.com/youtube-channel-id.php',
+		)
+	);
+
+
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_instagram_url'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_instagram_url'),
 		array(
 			'label'     	=> esc_html__('URL do Instagram', 'coletivo'),
 			'section'       => 'coletivo_ultimos_sociais_content',
 			'description'   => '',
 		)
 	);
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_instagram_token'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_instagram_token'),
+		array(
+			'label'     	=> esc_html__('Token de acesso Instagram', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+			'description'   => 'Gere o token pelo site: https://instagram.pixelunion.net/',
+		)
+	);
+
 	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_fb'),
 		array(
 			'sanitize_callback' => 'sanitize_text_field',

@@ -60,14 +60,39 @@
 				get_template_part( 'section-parts/each-social' );
 				wp_die();
 			}
+			if ( 'instagram' === $_REQUEST[ 'network' ] ) {
+				$this->get_instagram_feed();
+				get_template_part( 'section-parts/each-social' );
+				wp_die();
+			}
 		}
+		private function get_instagram_feed() {
+			if ( false !== get_transient( 'csem_instagram_transient' ) ) {
+				$this->transient = get_transient( 'csem_instagram_transient' );
+				$this->image = $this->transient[ 'image' ];
+				return;
+			}
+			$token = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_instagram_token' );
+			if ( ! $token ) {
+				wp_die( 'Falta o token do instagram' );
+				return;
+			}
+			$instagram_api_url = 'https://api.instagram.com/v1/users/self/media/recent?access_token=' . $token;
+			$response = file_get_contents( $instagram_api_url );
+			$json = json_decode( $response );
+			//var_dump( $response );
+			$this->image = $json->data[0]->images->standard_resolution->url;
+			$this->transient = array( 'image' => $this->image );
+			set_transient( 'csem_instagram_transient', $this->transient, $this->transient_time );
+		}
+
 		private function get_youtube_feed() {
 			if ( false !== get_transient( 'csem_yt_transient' ) ) {
 				$this->transient = get_transient( 'csem_yt_transient' );
 				$this->image = $this->transient[ 'image' ];
 				return;
 			}
-			$channel_id = 'UClnwaE2l2FG0eKWR9Rc610A';
+			$channel_id = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_yt_id', 'UClnwaE2l2FG0eKWR9Rc610A' );
 			$youtube_feed_url = 'https://www.youtube.com/feeds/videos.xml?channel_id=' . $channel_id;
 			$response = file_get_contents( $youtube_feed_url );
 			//var_dump( $response );
@@ -116,8 +141,8 @@
 			//var_dump( $response->data[0]->images[6] );
 			//var_dump("https://graph.facebook.com/{$feed}/photos/uploaded/?{$authentication}&limit={$maximum}&fields=images,link");
 			//wp_die();
-			$this->image = $response->data[0]->images[6]->source;
-			$this->transient = array( 'image' => $this->image );
+			$this->image = $response->data[0]->images[6]->source
+;			$this->transient = array( 'image' => $this->image );
 			set_transient( 'csem_fb_transient', $this->transient, $this->transient_time );
 		}
 		/**
