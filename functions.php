@@ -376,3 +376,25 @@ add_shortcode( 'csem_agenda', 'csem_agenda' );
 
 // Classe para seção ultimos posts das redes
 require_once get_stylesheet_directory() . '/inc/class-load-last-post-social-networks.php';
+
+/**
+ * Função para exibir todos posts no archive da agenda
+ */
+function hwl_home_pagesize( $query ) {
+    if ( is_admin() || ! $query->is_main_query() || ! is_post_type_archive( 'el_events' ) ) {
+        return;
+    }
+    $query->set( 'posts_per_page', 9999999 );
+    if ( is_home() ) {
+        // Display only 1 post for the original blog archive
+        $query->set( 'posts_per_page', 1 );
+        return;
+    }
+
+    if ( is_post_type_archive( 'movie' ) ) {
+        // Display 50 posts for a custom post type called 'movie'
+        $query->set( 'posts_per_page', 50 );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'hwl_home_pagesize', 1 );
