@@ -76,6 +76,7 @@ header#masthead {
     width:128px;
     margin-top:50vh;
     z-index: 999;
+    position: fixed;
 }
 header#masthead .csem-open-menu {
     background: #ca1921;

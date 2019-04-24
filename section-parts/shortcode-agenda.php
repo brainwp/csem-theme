@@ -9,7 +9,10 @@
 	<?php $query = new WP_Query( 
 			array(
 				'post_type' 		=> 'el_events',
-				'posts_per_page'	=> 3
+				'posts_per_page'	=> 3,
+				'orderby'			=> 'meta_value',
+				'meta_value_num'	=> 'startdate',
+				'order'				=> 'ASC'
 			)
 		);
 	?>
