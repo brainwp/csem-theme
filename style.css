@@ -84,6 +84,12 @@ header#masthead .csem-open-menu {
     width: 64px;
     height:64px;
     margin-left: 15px;
+    box-shadow: -7px 6px 52px -3px rgba(0,0,0,0.30) !important;
+    transition:200ms ease all;
+}
+header#masthead .csem-open-menu:hover {
+	box-shadow: -7px 6px 52px -3px rgba(0,0,0,0.70) !important;
+	transition:200ms ease all;
 }
 header#masthead .csem-open-menu img {
     width: 48px;
