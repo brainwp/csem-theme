@@ -229,6 +229,11 @@ body.home .hero-content-style1 h2.hero-large-text {
 		padding-right:0;
 	}
 }
+@media screen and ( max-width:1300px ) {
+	.section-fazer-parte .fazer-parte-content-2 h2.section-title {
+		top:20px;
+	}
+}
 @media screen and ( max-width: 900px ) {
 	.section-fazer-parte .section-title-area.fazer-parte-content-1 {
 		width:100%;
