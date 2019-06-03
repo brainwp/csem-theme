@@ -4,17 +4,30 @@
  * Shortcode agenda ( Functiona em conjunto com o plugin event-list )
  *
  */
+$current_date = date('Y-m-d');
 ?>
 <div class="col-md-12 agenda-container">
 	<?php $query = new WP_Query( 
+		array(
+			'post_type' 		=> 'el_events',
+			'posts_per_page'	=> 3,
+			'orderby'			=> 'meta_value',
+			'meta_key'			=> 'startdate',
+			'meta_compare'		=> '>=',
+			'meta_value'		=> $current_date,
+			'order'				=> 'ASC'
+		)
+	);
+	if ( ! $query->have_posts() ) {
+		$query = new WP_Query( 
 			array(
 				'post_type' 		=> 'el_events',
 				'posts_per_page'	=> 3,
 				'orderby'			=> 'meta_value',
-				'meta_key'			=> 'startdate',
-				'order'				=> 'ASC'
+				'meta_key'			=> 'startdate'
 			)
 		);
+	}
 	?>
 	<?php if ( $query->have_posts() ) : ?>
 		<?php while( $query->have_posts() ) : $query->the_post(); ?>

@@ -12,6 +12,9 @@ function csem_theme_scripts() {
 	wp_enqueue_script( 'csem-theme-home', get_stylesheet_directory_uri() . '/assets/js/home.js', array( 'jquery'), '1.0', true );
 	wp_localize_script( 'csem-theme-home', 'ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 	wp_enqueue_script( 'csem-theme-geral', get_stylesheet_directory_uri() . '/assets/js/geral.js', array( 'jquery'), '1.0', true );
+	wp_enqueue_script( 'csem-theme-fullpage-js', get_stylesheet_directory_uri() . '/assets/js/fullpage.js', array( 'jquery'), '1.0', true );
+	wp_enqueue_script( 'csem-theme-template-metodo', get_stylesheet_directory_uri() . '/assets/js/template-metodo.js', array( 'jquery'), '1.0', true );
+
 
 }
 add_action( 'wp_enqueue_scripts', 'csem_theme_scripts' );
