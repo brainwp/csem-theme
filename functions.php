@@ -3,6 +3,68 @@
  * functions.php
  *
  */
+/**
+ * Functions to show tema-coletivo sections on custom pages
+ * @param string $name
+ * @param bool|string $default
+ * @return string
+ */
+if ( ! function_exists( 'coletivo_get_theme_mod' ) ) {
+	function coletivo_get_theme_mod( $name, $default = false ) {
+		// if it's not template-sections.php page template, ignore and run wp get_theme_mod function
+		global $post;
+		if ( ! $post || ! is_object( $post ) ) {
+			return get_theme_mod( $name, $default );
+		}
+		$page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+		if ( ! $page_template || $page_template != 'template-sections.php' ) {
+			return get_theme_mod( $name, $default );
+		}
+		$general_settings_ignore = array( 'coletivo_header_settings', 'coletivo_hide_tagline', 'coletivo_primary_color', 'coletivo_animation_disable', 'coletivo_header_transparent', 'coletivo_header_bg_color', 'coletivo_logo_text_color', 'coletivo_menu_color', 'coletivo_menu_hover_color', 'coletivo_menu_hover_bg_color', 'coletivo_menu_toggle_button_color', 'coletivo_vertical_align_menu', 'coletivo_sticky_header_disable', 'coletivo_footer_text', 'coletivo_footer_text_link', 'coletivo_footer_info_bg', 'coletivo_btt_disable', 'coletivo_blog_page_style', 'coletivo_hide_sitetitle', 'coletivo_hide_tagline' );
+		// if $name is general settings (like header, footer, etc), ignore and run wp get_theme_mod
+		if ( in_array( $name, $general_settings_ignore ) ) {
+			return get_theme_mod( $name, $default );
+		}
+		if ( $post ) {
+			return get_theme_mod( $name . '_' . $post->ID, $default );
+		}
+		return get_theme_mod( $name, $default );
+	}
+}
+/**
+ * function to change customizer settings to use in more than one page
+ * @param string $name
+ * @return string
+ */
+if ( ! function_exists( 'coletivo_get_theme_mod') ) {
+	function coletivo_add_settings( $name ) {
+		// if it's not template-sections.php page template, ignore and return default $name;
+		if ( ! isset( $_GET[ 'url' ] ) ) {
+			return $name;
+		}
+			$post_id = url_to_postid( $_GET[ 'url' ] );
+			if ( ! $post_id && ! is_numeric( $post_id ) ) {
+			return $name;
+		}
+		$post = get_post( $post_id );
+		if ( ! $post || ! is_object( $post ) ) {
+			return $name;
+		}
+		$page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+		if ( ! $page_template || $page_template != 'template-sections.php' ) {
+			return $name;
+		}
+		$general_settings_ignore = array( 'coletivo_header_settings', 'coletivo_hide_tagline', 'coletivo_primary_color', 'coletivo_animation_disable', 'coletivo_header_transparent', 'coletivo_header_bg_color', 'coletivo_logo_text_color', 'coletivo_menu_color', 'coletivo_menu_hover_color', 'coletivo_menu_hover_bg_color', 'coletivo_menu_toggle_button_color', 'coletivo_vertical_align_menu', 'coletivo_sticky_header_disable', 'coletivo_footer_text', 'coletivo_footer_text_link', 'coletivo_footer_info_bg', 'coletivo_btt_disable', 'coletivo_blog_page_style', 'coletivo_hide_sitetitle', 'coletivo_hide_tagline' );
+		// if $name is general settings (like header, footer, etc), ignore and run wp get_theme_mod
+		if ( in_array( $name, $general_settings_ignore ) ) {
+			return $name;
+		}
+		if ( $post ) {
+			return $name . '_' . $post->ID;
+		}
+		return $name;
+	}
+}
  /*
  * Adiciona arquivos JS
  *
@@ -63,7 +125,7 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 	foreach( $pages as $p ){
 		$option_pages[ $p->ID ] = $p->post_title;
 	}
-	
+
 	/*------------------------------------------------------------------------*/
     /*  Section: Fazer Parte
     /*------------------------------------------------------------------------*/
