@@ -672,6 +672,16 @@ section.section-type-metodo h3 {
     justify-items: center;
     height: 100vh;
 }
+section.section-type-curso h3 {
+    font-size: 36px;
+    color:gray;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    display: block;
+    justify-content: center;
+
+}
 section.section-type-metodo .content {
 	color:white;
 	display: flex;
