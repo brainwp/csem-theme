@@ -45,6 +45,7 @@ if ( coletivo_is_selective_refresh() ) {
                                 <div class="the-thumb">
                                     <h2 class="section-title"><?php the_title(); ?></h2>
                                     <?php the_post_thumbnail( 'large' );?>
+                                    <h2 class="section-title-buttom"><?php the_title(); ?></h2>
                                 </div><!-- .the-thumb -->
                                 <div class="section-desc">
                                     <?php the_excerpt();?>

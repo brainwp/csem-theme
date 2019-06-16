@@ -36,7 +36,7 @@ if ( ! function_exists( 'coletivo_get_theme_mod' ) ) {
  * @param string $name
  * @return string
  */
-if ( ! function_exists( 'coletivo_get_theme_mod') ) {
+if ( ! function_exists( 'coletivo_add_settings') ) {
 	function coletivo_add_settings( $name ) {
 		// if it's not template-sections.php page template, ignore and return default $name;
 		if ( ! isset( $_GET[ 'url' ] ) ) {
