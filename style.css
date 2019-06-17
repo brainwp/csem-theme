@@ -653,6 +653,15 @@ section.section-type-metodo {
 	background-size: cover;
 	background-position: center;
 }
+
+section.section-type-cursos {
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: #e8e8e8;
+}
+
 section.section-type-metodo .container {
 }
 section.section-type-metodo h3 {
@@ -700,7 +709,23 @@ body.admin-bar section.section-type-metodo .content {
 section.section-type-metodo .content .content-itself{
     display: block;
     width:100%;
+    font-size: 0.9em;
 }
+section.section-type-curso .content .content-itself{
+    display: block;
+    width:100%;
+    font-size: 0.9em;
+}
+.section-type-curso .btn {
+    float: left;
+    border-radius: 30px;
+    padding: .75rem 1.25rem;
+}
+
+.col-md-6.nopadding {
+    padding: 0;
+}
+
 section.section-type-metodo:nth-child(even) .content {
 	color:#333333;
 }

@@ -48,7 +48,7 @@ $query = new WP_Query( $args );
 		<?php endif;?>
 			</div>
 			<div class="container">
-				<div class="col-md-6">
+				<div class="col-md-6 nopadding">
 					<h3 class="section-title col-md-12">
 					<?php the_title();?>
 					</h3><!-- .section-title -->
@@ -56,6 +56,8 @@ $query = new WP_Query( $args );
 					<div class="content-itself">
 						<?php the_content();?>
 					</div><!-- .content-itself -->
+					<a id="curso-slug" class="btn btn-theme-primary btn-lg" href="#curso-slug">
+					Fale com um professor e saiba mais</a>
 					</div>
 				</div><!-- .col-md-6 pull-right content -->
 			</div>
