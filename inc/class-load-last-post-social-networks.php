@@ -141,9 +141,10 @@
 			//var_dump( $response->data[0]->images[6] );
 			//var_dump("https://graph.facebook.com/{$feed}/photos/uploaded/?{$authentication}&limit={$maximum}&fields=images,link");
 			//wp_die();
-			$this->image = $response->data[0]->images[6]->source
-;			$this->transient = array( 'image' => $this->image );
-			set_transient( 'csem_fb_transient', $this->transient, $this->transient_time );
+			$this->image = $response->data[0]->images[0]->source;
+			//echo json_encode( $response );
+			$this->transient = array( 'image' => $this->image );
+			//set_transient( 'csem_fb_transient', $this->transient, $this->transient_time );
 		}
 		/**
 		 * Return an instance of this class.

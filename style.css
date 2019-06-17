@@ -480,9 +480,6 @@ body.home .hero-content-style1 h2.hero-large-text {
     display: none;
 }
 @media screen and ( max-width:1000px ) {
-    .section-title-area .fazer-parte-content-1 .the-thumb {
-        padding-top:50px;
-    }
     .section-fazer-parte .fazer-parte-content-2 h2.section-title-buttom {
             background: #d8d8d8;
             display: block;
@@ -506,11 +503,22 @@ body.home .hero-content-style1 h2.hero-large-text {
 
 }
 @media screen and ( max-width:500px ) {
-    .section-fazer-parte .fazer-parte-content-1 h2.section-title, 
+    .section-fazer-parte .fazer-parte-content-1 h2.section-title,
     .section-fazer-parte .fazer-parte-content-2 h2.section-title-buttom {
         position: relative;
         margin-top: 0;
         margin-left:0;
+        background: none;
+    }
+    .section-fazer-parte .fazer-parte-content-2 .the-thumb {
+    	padding-top:0;
+    }
+    .section-fazer-parte .fazer-parte-content-2 .the-thumb img {
+    	border-bottom-left-radius: 50px;
+    	border-top-right-radius:0px;
+    }
+    .section-fazer-parte .fazer-parte-content-2 {
+    	background:#e8e8e8 !important;
     }
 }
 
@@ -749,4 +757,7 @@ section.section-type-metodo:nth-child(even) h3 {
 }
 #fp-nav ul li a span {
 	background:white !important;
+}
+.section-type-metodo .ugb-expand__toggle {
+    color:#333333 !important;
 }
