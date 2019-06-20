@@ -350,7 +350,7 @@ header#masthead .csem-open-menu img {
 @media screen and ( max-width: 900px ) {
     header#masthead {
         margin-top:1vh;
-        position: absolute;
+        position: fixed;
         margin-left: auto;
         margin-right: auto;
         left: 0;
@@ -490,7 +490,7 @@ body.home .hero-content-style1 h2.hero-large-text {
             font-size: 35px;
             border-top-right-radius: 50px;
             margin-top: -103px;
-            margin-left: 39px;
+            margin-left: 0;
             padding-top: 20px;
             letter-spacing: 2px;
             font-weight: 800;
@@ -499,6 +499,9 @@ body.home .hero-content-style1 h2.hero-large-text {
     }
     .section-fazer-parte .fazer-parte-content-2 h2.section-title {
         display: none;
+    }
+    .section-fazer-parte .fazer-parte-content-2 .the-thumb {
+    	padding-top: 0;
     }
 
 }
@@ -616,6 +619,12 @@ a#featuredpage {
 	background-repeat: no-repeat;
 	background-position: top center;
 	background-attachment: fixed;
+}
+@media screen and ( max-width: 900px ) {
+	.section-ultimos-sociais {
+		background-size:contain;
+		background-position: center center;
+	}
 }
 .section-ultimos-sociais img {
 	width:256px;
