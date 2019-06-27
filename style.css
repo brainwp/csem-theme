@@ -701,7 +701,7 @@ body.single-el_events #page {
 body.single-el_events #the-content {
 	padding-bottom: 40px;
 }
-
+/** Pagina do metodo - template-metodo.php */
 section.section-type-metodo {
 	width:100%;
 	background-repeat: no-repeat;
@@ -815,4 +815,11 @@ section.section-type-metodo:nth-child(even) h3 {
 }
 .section-type-metodo .ugb-expand__toggle {
     color:#333333 !important;
+}
+/* pagina de cursos - template-cursos.php */
+body.page-template-template-cursos section.section-type-curso {
+	padding-top:30px;
+}
+.query-cursos {
+	padding-bottom: 50px;
 }

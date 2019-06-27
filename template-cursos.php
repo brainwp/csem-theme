@@ -37,13 +37,14 @@ $query = new WP_Query( $args );
 		</div><!-- .container -->
 	</section><!-- .section-type-metodo -->
 <?php endwhile;?> 
+<div class="container query-cursos">
 <?php if ( $query->have_posts() ) : ?>
 	<?php while( $query->have_posts() ) : $query->the_post(); ?>
 		<section class="section section-type-curso">
 			<div class="col-md-6">
 			<?php $style = '';?>
 		<?php if ( has_post_thumbnail() ) : ?>
-			<?php $imagecursos = the_post_thumbnail('full');?>
+			<?php $imagecursos = the_post_thumbnail('large');?>
 			<?php $style = sprintf( 'background-image:url(%s);', $imagecursos );?>
 		<?php endif;?>
 			</div>
@@ -64,6 +65,7 @@ $query = new WP_Query( $args );
 		</section><!-- .section-type-metodo -->
 	<?php endwhile;?>
 <?php endif;?>
+</div><!-- .container -->
 </div><!-- #fullpage -->
 <?php get_footer();
 
