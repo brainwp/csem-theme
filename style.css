@@ -823,3 +823,8 @@ body.page-template-template-cursos section.section-type-curso {
 .query-cursos {
 	padding-bottom: 50px;
 }
+@media screen and ( max-width: 900px ) {
+	.query-cursos .content-itself {
+		font-size: 1.2em !important;
+	}
+}
