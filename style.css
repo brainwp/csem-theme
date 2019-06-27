@@ -707,6 +707,11 @@ section.section-type-metodo {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
+}
+section.section-type-metodo#duvidas-frequentes {
+	padding-top:50px;
+	padding-bottom: 50px;
 }
 
 section.section-type-cursos {
@@ -735,6 +740,12 @@ section.section-type-metodo h3 {
     align-items: center;
     justify-items: center;
     height: 100vh;
+}
+@media screen and ( min-width: 800px ) {
+	section.section-type-metodo h3 {
+		height: 60vh;
+    	margin-top: 23vh;
+    }
 }
 section.section-type-curso h3 {
     font-size: 36px;

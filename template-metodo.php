@@ -39,13 +39,14 @@ $query = new WP_Query( $args );
 <?php endwhile;?> 
 <?php if ( $query->have_posts() ) : ?>
 	<?php while( $query->have_posts() ) : $query->the_post(); ?>
+		<?php global $post;?>
 		<?php $style = '';?>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php $image = get_the_post_thumbnail_url( get_the_ID(), 'large' );?>
 			<?php $style = sprintf( 'background-image:url(%s);', $image );?>
 		<?php endif;?>
 
-		<section class="section section-type-metodo" style="<?php echo $style;?>">
+		<section class="section section-type-metodo" style="<?php echo $style;?>" id="<?php echo $post->post_name;?>">
 			<div class="container">
 				<h3 class="section-title col-md-1">
 					<?php the_title();?>
