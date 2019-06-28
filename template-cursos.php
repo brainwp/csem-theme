@@ -57,8 +57,8 @@ $query = new WP_Query( $args );
 					<div class="content-itself">
 						<?php the_content();?>
 					</div><!-- .content-itself -->
-					<a id="curso-slug" class="btn btn-theme-primary btn-lg" href="#curso-slug">
-					Fale com um professor e saiba mais</a>
+					<button id="curso-modal" class="btn btn-theme-primary btn-lg" data-toggle="modal" data-target="#modal">
+					Fale com um professor e saiba mais</button>
 					</div>
 				</div><!-- .col-md-6 pull-right content -->
 			</div>

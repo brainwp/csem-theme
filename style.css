@@ -828,3 +828,11 @@ body.page-template-template-cursos section.section-type-curso {
 		font-size: 1.2em !important;
 	}
 }
+.modal h5 {
+	width: auto;
+    clear: none !important;
+    display: inline;
+}
+.modal .wpcf7-form-control {
+	width:100%;
+}
