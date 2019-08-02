@@ -320,7 +320,7 @@ header#masthead .csem-open-menu {
     display: inline-block;
     width: 64px;
     height:64px;
-    margin-left: 32px;
+    margin-left: 15px;
     box-shadow: -7px 6px 52px -3px rgba(0,0,0,0.30) !important;
     transition:200ms ease all;
 }
@@ -355,6 +355,9 @@ header#masthead .csem-open-menu img {
         margin-right: auto;
         left: 0;
         right: 0;
+    }
+    header#masthead .csem-open-menu {
+        margin-left: 32px !important;
     }
 }
 
@@ -775,12 +778,12 @@ body.admin-bar section.section-type-metodo .content {
 section.section-type-metodo .content .content-itself{
     display: block;
     width:100%;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 section.section-type-curso .content .content-itself{
     display: block;
     width:100%;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 .section-type-curso .btn {
     float: left;
