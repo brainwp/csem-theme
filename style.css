@@ -320,7 +320,7 @@ header#masthead .csem-open-menu {
     display: inline-block;
     width: 64px;
     height:64px;
-    margin-left: 15px;
+    margin-left: 32px;
     box-shadow: -7px 6px 52px -3px rgba(0,0,0,0.30) !important;
     transition:200ms ease all;
 }
@@ -786,6 +786,9 @@ section.section-type-curso .content .content-itself{
     float: left;
     border-radius: 30px;
     padding: .75rem 1.25rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
 }
 
 .col-md-6.nopadding {
@@ -820,6 +823,21 @@ section.section-type-metodo:nth-child(even) h3 {
 body.page-template-template-cursos section.section-type-curso {
 	padding-top:30px;
 }
+@media screen and ( max-width: 400px ) {
+    body.page-template-template-cursos section.section-type-curso {
+        clear:both;
+        float:left;
+        width:100%;
+    }
+    section.section-type-curso .content {
+        float: left;
+        width: 100%;
+        max-width: 100%;
+    }
+    .section-type-curso .btn {
+        font-size:14px;
+    }
+}
 .query-cursos {
 	padding-bottom: 50px;
 }
@@ -827,10 +845,14 @@ body.page-template-template-cursos section.section-type-curso {
 	.query-cursos .content-itself {
 		font-size: 1.2em !important;
 	}
+    section.section-type-curso h3 {
+        padding-top:15px;
+    }
 }
 section.section-type-curso .content-itself.content-child p{
     font-size:14px;
 }
+
 .modal h5 {
 	width: auto;
     clear: none !important;

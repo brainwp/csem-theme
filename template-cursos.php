@@ -44,9 +44,8 @@ $query = new WP_Query( $args );
 			<div class="col-md-6">
 				<?php the_post_thumbnail('large');?>
 			</div>
-			<div class="container">
-				<div class="col-md-6 nopadding">
-					<div class="col-md-12 pull-right content">
+			<div class="col-md-6 nopadding">
+				<div class="col-md-12 pull-right content">
 					<h3 class="section-title">
 						<?php the_title();?>
 					</h3><!-- .section-title col-md-2 -->
@@ -54,10 +53,10 @@ $query = new WP_Query( $args );
 						<?php the_content();?>
 					</div><!-- .content-itself -->
 					<button id="curso-modal" class="btn btn-theme-primary btn-lg" data-toggle="modal" data-target="#modal">
-					Fale com um professor e saiba mais</button>
-					</div>
-				</div><!-- .col-md-6 pull-right content -->
-			</div>
+						Fale com um professor e saiba mais
+					</button>
+				</div>
+			</div><!-- .col-md-6 pull-right content -->
 		</section><!-- .section-type-metodo -->
 	<?php endwhile;?>
 <?php endif;?>
