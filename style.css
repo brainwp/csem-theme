@@ -775,12 +775,12 @@ body.admin-bar section.section-type-metodo .content {
 section.section-type-metodo .content .content-itself{
     display: block;
     width:100%;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 section.section-type-curso .content .content-itself{
     display: block;
     width:100%;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 .section-type-curso .btn {
     float: left;
@@ -827,6 +827,9 @@ body.page-template-template-cursos section.section-type-curso {
 	.query-cursos .content-itself {
 		font-size: 1.2em !important;
 	}
+}
+section.section-type-curso .content-itself.content-child p{
+    font-size:14px;
 }
 .modal h5 {
 	width: auto;

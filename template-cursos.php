@@ -42,19 +42,15 @@ $query = new WP_Query( $args );
 	<?php while( $query->have_posts() ) : $query->the_post(); ?>
 		<section class="section section-type-curso">
 			<div class="col-md-6">
-			<?php $style = '';?>
-		<?php if ( has_post_thumbnail() ) : ?>
-			<?php $imagecursos = the_post_thumbnail('large');?>
-			<?php $style = sprintf( 'background-image:url(%s);', $imagecursos );?>
-		<?php endif;?>
+				<?php the_post_thumbnail('large');?>
 			</div>
 			<div class="container">
 				<div class="col-md-6 nopadding">
-					<h3 class="section-title col-md-12">
-					<?php the_title();?>
-					</h3><!-- .section-title -->
 					<div class="col-md-12 pull-right content">
-					<div class="content-itself">
+					<h3 class="section-title">
+						<?php the_title();?>
+					</h3><!-- .section-title col-md-2 -->
+					<div class="content-itself content-child">
 						<?php the_content();?>
 					</div><!-- .content-itself -->
 					<button id="curso-modal" class="btn btn-theme-primary btn-lg" data-toggle="modal" data-target="#modal">
