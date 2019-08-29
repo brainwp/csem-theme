@@ -26,6 +26,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *
  * Copyright (C) 2018 http://alvarotrigo.com/fullPage - A project by Alvaro Trigo
  */
+body.home {
+    background: #111111;
+}
+body.home section.section-social {
+    display: none;
+}
 html.fp-enabled,
 .fp-enabled body {
     margin: 0;
@@ -358,6 +364,24 @@ header#masthead .csem-open-menu img {
     }
     header#masthead .csem-open-menu {
         margin-left: 32px !important;
+    }
+}
+.coletivo-menu a {
+	word-break: break-word;
+    display: inline-block;
+    float: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.coletivo-menu li {
+	white-space: normal !important;
+}
+@media screen and ( max-width: 500px ) {
+    header#masthead {
+        margin-left: 25%;
+    }
+    header#masthead .csem-open-menu {
+        margin-left: 0 !important;
     }
 }
 
@@ -825,6 +849,9 @@ section.section-type-metodo:nth-child(even) h3 {
 /* pagina de cursos - template-cursos.php */
 body.page-template-template-cursos section.section-type-curso {
 	padding-top:30px;
+    clear: both;
+    float: left;
+    padding-bottom: 15px;
 }
 @media screen and ( max-width: 400px ) {
     body.page-template-template-cursos section.section-type-curso {
@@ -852,6 +879,7 @@ body.page-template-template-cursos section.section-type-curso {
         padding-top:15px;
     }
 }
+
 section.section-type-curso .content-itself.content-child p{
     font-size:14px;
 }
@@ -863,4 +891,34 @@ section.section-type-curso .content-itself.content-child p{
 }
 .modal .wpcf7-form-control {
 	width:100%;
+}
+/**
+ *
+ * Seção #jornada home
+ *
+ */
+#jornada {
+    background:#950407;
+}
+#jornada * {
+    color:white !important;
+}
+#jornada .icon-image img {
+    width:128px;
+    height: 128px;
+    border-radius:50%;
+    border:5px solid white;
+    outline:2px solid #950407;
+}
+#jornada h4 {
+    border-radius:30px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    background:white;
+    color:#950407 !important;
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
