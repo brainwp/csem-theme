@@ -922,3 +922,18 @@ section.section-type-curso .content-itself.content-child p{
     padding-top: 7px;
     padding-bottom: 7px;
 }
+
+/** page.php */
+body.page-template-default .entry-content p, body.page-template-default .entry-content span {
+	font-size: 17px;
+}
+body.page-template-default .entry-content input, body.page-template-default .entry-content textarea {
+	width:100%;
+	display: inline-block;
+}
+body.page-template-default div.wpcf7 label span, body.page-template-default div.wpcf7 label {
+	display: inline-block;
+	width: 100%;
+	clear: both;
+	float: left;
+}
