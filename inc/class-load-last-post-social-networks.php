@@ -33,7 +33,7 @@
 		 *
 		 * @var int
 		 */
-		public $transient_time = 18000;
+		public $transient_time = 2000;
 
 		/**
 		 * Initialize the plugin
