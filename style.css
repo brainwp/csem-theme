@@ -378,7 +378,7 @@ header#masthead .csem-open-menu img {
 }
 @media screen and ( max-width: 500px ) {
     header#masthead {
-        margin-left: 25%;
+        margin-left: 40%;
     }
     header#masthead .csem-open-menu {
         margin-left: 0 !important;
@@ -737,6 +737,11 @@ section.section-type-metodo {
 	background-attachment: fixed;
 }
 @media screen and (max-width: 800px ) {
+	section.section-type-metodo:not(:first-of-type) {
+		padding-top: 120px;
+		padding-bottom: 140px;
+	}
+
 	section.section-type-metodo#duvidas-frequentes {
 		background-position: top left;
 	}
