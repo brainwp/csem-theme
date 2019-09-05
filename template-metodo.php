@@ -51,7 +51,7 @@ $query = new WP_Query( $args );
 				<h3 class="section-title col-md-1">
 					<?php the_title();?>
 				</h3><!-- .section-title col-md-2 -->
-				<div class="col-md-10 pull-right content">
+				<div class="col-md-10 pull-right content wow fadeInUp" data-wow-delay="850ms" data-wow-duration="1100ms">
 					<div class="content-itself">
 						<?php the_content();?>
 					</div><!-- .content-itself -->
