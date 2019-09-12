@@ -821,15 +821,20 @@ section.section-type-curso .content .content-itself{
     display: block;
     width:100%;
     font-size: 1.1em;
-    word-break: break-all;
 }
 .section-type-curso .btn {
     float: left;
     border-radius: 30px;
     padding: .75rem 1.25rem;
-    word-wrap: break-word;
-    word-break: break-word;
     max-width: 100%;
+}
+@media screen and ( max-width: 900px ) {
+
+	.section-type-curso .btn {
+		white-space: normal !important;
+		word-break: break-word;
+	}
+
 }
 
 .col-md-6.nopadding {
@@ -914,8 +919,14 @@ section.section-type-curso .content-itself.content-child p{
 #jornada {
     background:#950407;
 }
-#jornada * {
+#jornada div {
     color:white !important;
+}
+#jornada h2.section-title {
+	color:white !important;
+}
+#jornada h4 a {
+	color: #950407 !important;
 }
 #jornada .icon-image img {
     width:128px;

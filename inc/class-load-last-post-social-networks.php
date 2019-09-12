@@ -118,8 +118,18 @@
 			1. Sign in as a developer at https://developers.facebook.com/
 			2. Click "Create New App" at https://developers.facebook.com/apps
 			3. Under Apps Settings, find the App ID and App Secret*/
+
 			$appID = '851152828309465';
 			$appSecret = 'aaaa0da4805e1940527bab6ed9ca77ed';
+			$app_id = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_fb_appid' );
+			if ( ! $app_id ) {
+				ẁp_die( 'Preencha o AppID da página nas configurações' );
+			}
+			$secret = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_fb_secret' );
+			if ( ! $secret ) {
+				ẁp_die( 'Preencha o AppID da página nas configurações' );
+			}
+
 			/* Configuring a JSON Facebook Feed
 			==========================================================================
 			1. Find the desired feed ID at http://findmyfacebookid.com/
@@ -131,7 +141,8 @@
 			}
 			$maximum = 1;
 
-			$authentication = file_get_contents("https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id={$appID}&client_secret={$appSecret}");
+			$authentication = file_get_contents("https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id={$app_id}&client_secret={$secret}");
+
 			//var_dump( $authentication );
 			$authentication = json_decode( $authentication );
 			$authentication = http_build_query( $authentication );

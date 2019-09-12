@@ -419,6 +419,30 @@ function csem_coletivo_customize_after_register( $wp_customize ) {
 			'section'       => 'coletivo_ultimos_sociais_content',
 		)
 	);
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_fb_appid'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_fb_appid'),
+		array(
+			'label'     	=> esc_html__('AppID do Aplicativo no Facebook', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+		)
+	);
+	$wp_customize->add_setting( coletivo_add_settings('coletivo_ultimos_sociais_fb_secret'),
+		array(
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => '',
+		)
+	);
+	$wp_customize->add_control( coletivo_add_settings('coletivo_ultimos_sociais_fb_secret'),
+		array(
+			'label'     	=> esc_html__('Secret do Aplicativo no Facebook', 'coletivo'),
+			'section'       => 'coletivo_ultimos_sociais_content',
+		)
+	);
 
 
     /*------------------------------------------------------------------------*/
