@@ -24,7 +24,7 @@ $query = new WP_Query( $args );
 		<?php $image = get_the_post_thumbnail_url( get_the_ID(), 'large' );?>
 		<?php $style = sprintf( 'background-image:url(%s);', $image );?>
 	<?php endif;?>
-	<section class="section section-type-metodo" style="<?php echo $style;?>">
+	<section class="section section-type-metodo wow fadeInUp" data-wow-delay="850ms" data-wow-duration="1100ms" style="<?php echo $style;?>">
 		<div class="container">
 			<h3 class="section-title col-md-1">
 				<?php the_title();?>
@@ -40,7 +40,7 @@ $query = new WP_Query( $args );
 <div class="container query-cursos">
 <?php if ( $query->have_posts() ) : ?>
 	<?php while( $query->have_posts() ) : $query->the_post(); ?>
-		<section class="section section-type-curso">
+		<section class="section section-type-curso wow fadeInUp" data-wow-delay="850ms" data-wow-duration="1100ms">
 			<div class="col-md-6">
 				<?php the_post_thumbnail('large');?>
 			</div>

@@ -119,8 +119,6 @@
 			2. Click "Create New App" at https://developers.facebook.com/apps
 			3. Under Apps Settings, find the App ID and App Secret*/
 
-			$appID = '851152828309465';
-			$appSecret = 'aaaa0da4805e1940527bab6ed9ca77ed';
 			$app_id = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_fb_appid' );
 			if ( ! $app_id ) {
 				ẁp_die( 'Preencha o AppID da página nas configurações' );
