@@ -108,6 +108,8 @@
 		 * Get facebook feed
 		 */
 		private function get_facebook_feed() {
+			$this->image = 'https://scontent.fbjp2-1.fna.fbcdn.net/v/t1.0-9/47421093_2387798797962078_1634059928836505600_n.jpg?_nc_cat=104&_nc_oc=AQmylX6kY680qxpq5LM60r4SJ1IEE1Nsr2ye3CTPklG8KC2h7JEdD3T4JQ3RAuMwl4I&_nc_ht=scontent.fbjp2-1.fna&oh=c4590b6c9af29ccb67d0fc1b12644469&oe=5E3252F6';
+			return;
 			if ( false !== get_transient( 'csem_fb_transient' ) ) {
 				$this->transient = get_transient( 'csem_fb_transient' );
 				$this->image = $this->transient[ 'image' ];
@@ -154,7 +156,7 @@
 			$opts = array('http' =>
 				array(
 					'method'  		=> 'GET',
-					'user_agent'	=> 'Chrome/74.0.3729.169 Safari/537.36'	
+					'user_agent'	=> 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0'	
 				)
 			);
 			$context = stream_context_create($opts);
@@ -166,12 +168,24 @@
 			$doc = new DOMDocument();
 			libxml_use_internal_errors(true);
 			$doc->loadHTML( $response );
+
 			libxml_clear_errors();
+
 			$xpath = new DOMXPath($doc);
-			$tags = $xpath->query('//*[contains(@class, "scaledImageFitWidth")][1]');
+
 			$classname = 'scaledImageFitWidth';
+
 			$nodes = $xpath->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+			echo $response;
+			wp_die();
+
+			if ( ! $nodes ) {
+				return;
+			}
 			$img = $nodes->item(1)->getAttribute('src');
+			var_dump( $nodes );
+			wp_die();
+
 			//echo $doc->saveHTML();
 			
 			if ( ! $img ) {
