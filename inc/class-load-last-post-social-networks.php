@@ -121,11 +121,15 @@
 
 			$app_id = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_fb_appid' );
 			if ( ! $app_id ) {
-				ẁp_die( 'Preencha o AppID da página nas configurações' );
+				ẁp_die( 'Preencha o AppID na página nas configurações' );
 			}
 			$secret = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_fb_secret' );
 			if ( ! $secret ) {
-				ẁp_die( 'Preencha o AppID da página nas configurações' );
+				ẁp_die( 'Preencha o AppID na página nas configurações' );
+			}
+			$link = coletivo_get_theme_mod( 'coletivo_ultimos_sociais_fb_url' );
+			if ( ! $link ) {
+				ẁp_die( 'Preencha o Link na página nas configurações' );
 			}
 
 			/* Configuring a JSON Facebook Feed
@@ -139,21 +143,48 @@
 			}
 			$maximum = 1;
 
-			$authentication = file_get_contents("https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id={$app_id}&client_secret={$secret}");
+			//$authentication = file_get_contents("https://graph.facebook.com/oauth/access_token?grant_type=client_credentials&client_id={$app_id}&client_secret={$secret}");
 
 			//var_dump( $authentication );
+			/**
 			$authentication = json_decode( $authentication );
 			$authentication = http_build_query( $authentication );
 			//var_dump( $authentication );
-			$response = file_get_contents("https://graph.facebook.com/{$feed}/photos/uploaded/?{$authentication}&limit={$maximum}&fields=images,link");
-			$response = json_decode( $response );
+			*/
+			$opts = array('http' =>
+				array(
+					'method'  		=> 'GET',
+					'user_agent'	=> 'Chrome/74.0.3729.169 Safari/537.36'	
+				)
+			);
+			$context = stream_context_create($opts);
+			
+			$response = file_get_contents($link, false, $context );
+			if ( ! $response ) {
+				wp_die();
+			}
+			$doc = new DOMDocument();
+			libxml_use_internal_errors(true);
+			$doc->loadHTML( $response );
+			libxml_clear_errors();
+			$xpath = new DOMXPath($doc);
+			$tags = $xpath->query('//*[contains(@class, "scaledImageFitWidth")][1]');
+			$classname = 'scaledImageFitWidth';
+			$nodes = $xpath->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+			$img = $nodes->item(1)->getAttribute('src');
+			//echo $doc->saveHTML();
+			
+			if ( ! $img ) {
+				wp_die();
+			}
+			
 			//var_dump( $response->data[0]->images[6] );
 			//var_dump("https://graph.facebook.com/{$feed}/photos/uploaded/?{$authentication}&limit={$maximum}&fields=images,link");
 			//wp_die();
-			$this->image = $response->data[0]->images[0]->source;
+			$this->image = $img;
 			//echo json_encode( $response );
 			$this->transient = array( 'image' => $this->image );
-			//set_transient( 'csem_fb_transient', $this->transient, $this->transient_time );
+			set_transient( 'csem_fb_transient', $this->transient, $this->transient_time );
 		}
 		/**
 		 * Return an instance of this class.
