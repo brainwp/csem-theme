@@ -294,6 +294,10 @@ html.fp-enabled,
     padding-top: 70px;
     margin-left: 12vw;
 }
+.menu-logo-toggle .site-branding, 
+#site-navigation ul.coletivo-menu {
+    padding-right: 15px;
+}
 .menu-logo-toggle .site-branding .site-title, .menu-logo-toggle .site-branding .site-description {
     display: none;
 }
@@ -696,13 +700,13 @@ a#featuredpage {
 .section-contact {
 	background: #ebebeb;
 }
-.section-contact .row {
-	background-image: url( 'assets/images/cropped-logo.png' );
-	background-position:top center;
-	background-repeat: no-repeat;
-	padding-top: 100px;
+.form-site-logo {
+    text-align: center;
+    padding-bottom: 50px;
 }
-
+.form-site-logo img {
+    width: 430px;
+}
 /* Archive el_events */
 body.post-type-archive-el_events #page {
 	background:#f1ca61;

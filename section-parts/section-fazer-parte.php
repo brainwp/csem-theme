@@ -9,10 +9,10 @@ if ( coletivo_is_selective_refresh() ) {
 }?>
 <section style="<?php echo esc_attr( $style );?>" id="<?php echo esc_attr( $coletivo_fazerparte_id );?>" <?php do_action('coletivo_section_atts', 'fazer-parte'); ?> class="<?php echo esc_attr(apply_filters('coletivo_section_class', 'section-fazer-parte section-padding onepage-section', 'fazer-parte')); ?>">
 <?php if ( coletivo_get_theme_mod( 'coletivo_fazer-parte_content_1' ) && coletivo_get_theme_mod( 'coletivo_fazer-parte_content_1' ) ) : ?>
-<div class="content"> 
+<div class="content">
 	            <div class="container">
 	                <?php do_action('coletivo_section_before_inner', 'fazer-parte'); ?>
-                            <div class="section-title-area fazer-parte-content-1">
+                            <div class="section-title-area fazer-parte-content-1 wow fadeInUp">
                                 <?php
                                     $post_id = coletivo_get_theme_mod( 'coletivo_fazer-parte_content_1' );
                                     global $post;
@@ -21,7 +21,7 @@ if ( coletivo_is_selective_refresh() ) {
                                     setup_postdata( $post );
                                 ?>
                                 <div class="the-thumb">
-                                    <?php the_post_thumbnail( 'large' );?>
+                                    <?php the_post_thumbnail( 'large', array( 'class' => 'no-lazy') );?>
                                     <h2 class="section-title"><?php the_title(); ?></h2>
                                 </div><!-- .the-thumb -->
                                 <div class="section-desc">
@@ -34,7 +34,7 @@ if ( coletivo_is_selective_refresh() ) {
                                     </a>
                                 <?php endif;?>
 		                    </div>
-                            <div class="section-title-area fazer-parte-content-2">
+                            <div class="section-title-area fazer-parte-content-2 wow fadeInDown">
                                 <?php
                                     $post_id = coletivo_get_theme_mod( 'coletivo_fazer-parte_content_2' );
                                     global $post;
@@ -44,7 +44,7 @@ if ( coletivo_is_selective_refresh() ) {
                                 ?>
                                 <div class="the-thumb">
                                     <h2 class="section-title"><?php the_title(); ?></h2>
-                                    <?php the_post_thumbnail( 'large' );?>
+                                    <?php the_post_thumbnail( 'large', array( 'class' => 'no-lazy') );?>
                                     <h2 class="section-title-buttom"><?php the_title(); ?></h2>
                                 </div><!-- .the-thumb -->
                                 <div class="section-desc">

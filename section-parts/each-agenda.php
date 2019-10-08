@@ -1,4 +1,4 @@
-		<div class="col-md-4 each-agenda">
+		<div class="col-md-4 each-agenda wow fadeInUp">
 			<?php $thumb_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );?>
 			<div class="the-thumb" style="background-image:url('<?php echo esc_url( $thumb_url );?>">
 				<a href="<?php the_permalink();?>">
