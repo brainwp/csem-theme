@@ -271,7 +271,7 @@ html.fp-enabled,
  * GERAL - Menu Lateral com toggle
 */
 .menu-logo-toggle {
-    position: absolute;
+    position: fixed;
     width: 45vw;
     top:0;
     left:-50vw;

@@ -17,13 +17,14 @@ jQuery(document).ready(function($) {
 			$( '.menu-logo-toggle' ).removeClass( 'open' );
 			csem_menu_open = false;
 		} else {
-			$( 'html, body' ).animate({
-        		scrollTop: 0
-        	}, 800, function(){
-        		$( '.menu-logo-toggle' ).addClass( 'open' );
-				$( '.csem-open-menu' ).addClass( 'open' );
-				setTimeout(function(){ csem_menu_open = true }, 540 );
-        	}); 
+			$( '.menu-logo-toggle' ).addClass( 'open' );
+			$( '.csem-open-menu' ).addClass( 'open' );
+			setTimeout(function(){ csem_menu_open = true }, 540 );
+		}
+	});
+	$( '#site-navigation ul li a' ).on( 'click', function(){
+		if ( csem_menu_open ) {
+			$( '.csem-open-menu' ).trigger( 'click' );
 		}
 	});
 	$( window ).load( function() {
