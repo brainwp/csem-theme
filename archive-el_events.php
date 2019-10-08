@@ -23,7 +23,7 @@ get_header(); ?>
 	?>
 	<?php if ( $query->have_posts() ) : ?>
 		<h1 class="the-title">
-			<?php _e( 'Agenda - Proximos eventos', 'csem-theme' );?>
+			<?php _e( 'Agenda - Próximos eventos', 'csem-theme' );?>
 		</h1><!-- .the-title -->
 			<div class="col-md-12 agenda-container">
 				<?php while( $query->have_posts() ) : $query->the_post(); ?>
