@@ -982,3 +982,29 @@ body.blog .page-header h1.page-title {
 .content-area .entry-content {
 	font-size: 17px;
 }
+.single-post header.entry-header {
+    padding-top: 40px;
+}
+
+.single-post .entry-content {
+    margin-left: 0.935rem;
+}
+
+.single-post #comments {
+    margin-left: 0.935rem;
+}
+
+.single-post header.entry-header .entry-meta {
+    margin-bottom: 0px;
+}
+
+.single-post .page-fullheader img {
+    margin-top: -15%;
+}
+
+.single-post .post-navigator-box {
+    position: absolute;
+    width: 30%;
+    padding-top: 15%;
+    right: 0;
+}
