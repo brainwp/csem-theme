@@ -976,8 +976,25 @@ body.blog .page-header {
 	padding-top:115px;
 	padding-bottom: 20px;
 }
+
 body.blog .page-header h1.page-title {
-	display: none;
+    display: none;
+}
+
+body.archive .page-header, body.category .page-header {
+    background-image: url( 'assets/images/blog-logo.png' );
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top:115px;
+    padding-bottom: 20px;
+}
+
+body.archive .page-header h1.page-title, body.category .page-header h1.page-title {
+    margin-bottom: -35px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    height: 45px;
 }
 .content-area .entry-content {
 	font-size: 17px;
