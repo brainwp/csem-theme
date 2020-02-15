@@ -996,6 +996,10 @@ body.archive .page-header h1.page-title, body.category .page-header h1.page-titl
     margin-top: 15px;
     height: 45px;
 }
+
+#content-inside {
+    padding-bottom: 20px;
+}
 .content-area .entry-content {
 	font-size: 17px;
 }
@@ -1003,7 +1007,7 @@ body.archive .page-header h1.page-title, body.category .page-header h1.page-titl
     padding-top: 40px;
 }
 
-.single-post .entry-content {
+.single-post .entry-content, .single-post .entry-footer {
     margin-left: 0.935rem;
 }
 
@@ -1021,7 +1025,7 @@ body.archive .page-header h1.page-title, body.category .page-header h1.page-titl
 
 .single-post .post-navigator-box {
     position: absolute;
-    width: 30%;
+    width: 31%;
     padding-top: 15%;
     right: 0;
 }

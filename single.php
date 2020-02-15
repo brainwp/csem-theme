@@ -16,10 +16,12 @@ get_header(); ?>
 				<div class="nav-previous nav-links">
 					<?php previous_post_link( '%link', __( '<i class="fa fa-caret-left" aria-hidden="true"></i> Previous', 'coletivo' ) ); ?>
 				</div>
+			</div>
+			<div class="col-sm-6">
 				<div class="nav-next nav-links">
 					<?php next_post_link( '%link', __( 'Next <i class="fa fa-caret-right" aria-hidden="true"></i>', 'coletivo' ) ); ?>
 				</div>
-				</div>
+			</div>
 					</div>
 				</div>
 	<?php if ( has_post_thumbnail() && $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large', true ) ) : ?>
