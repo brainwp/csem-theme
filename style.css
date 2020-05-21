@@ -284,22 +284,7 @@ html.fp-enabled,
     transition: 1200ms ease all;
     left: 0;
 }
-@media screen and ( max-width: 900px ) {
-    .menu-logo-toggle {
-        width:100%;
-        left:-101vw;
-    }
 
-    .menu-logo-toggle .site-branding {
-    padding-top: 90px;
-    margin-left: 12vw;
-	}
-
-	.menu-logo-toggle .site-branding, 
-#site-navigation ul.coletivo-menu {
-    margin-right: 0px;
-	}
-}
 .menu-logo-toggle .site-branding {
     padding-top: 70px;
     margin-left: 10vw;
@@ -368,6 +353,28 @@ header#masthead .csem-open-menu img {
     margin-left: 11px !important;
     margin-bottom: 11px !important;
 }
+
+@media screen and ( max-width: 500px ) {
+    .menu-logo-toggle {
+        width:100%;
+        left:-101vw;
+    }
+
+    .menu-logo-toggle .site-branding {
+    padding-top: 90px;
+    margin-left: 12vw;
+    }
+
+    .menu-logo-toggle .site-branding, 
+#site-navigation ul.coletivo-menu {
+    margin-right: 0px;
+    }
+
+    #site-navigation {
+    margin-left: 10vw;
+    }
+}
+
 @media screen and ( max-width: 900px ) {
     header#masthead {
         margin-top:1vh;
@@ -1049,10 +1056,10 @@ body.archive .page-header h1.page-title, body.category .page-header h1.page-titl
     max-height: 40vw;
 }
 
-@media screen and ( max-width: 900px ) {
+@media screen and ( max-width: 500px ) {
 
 	.page-fullheader {
-    max-height: 60vw;
+    max-height: 62vw;
 	}
 
 	.single .entry-header .entry-title {
@@ -1061,12 +1068,16 @@ body.archive .page-header h1.page-title, body.category .page-header h1.page-titl
 
 	.single-post .post-navigator-box {
 	    width: 45%;
-	    padding-top: 30vw;
+	    padding-top: 31vw;
 	}
 
 	.nav-links a {
     font-size: 10px;
 
 	}
+
+    i.fa.fa-caret-left, i.fa.fa-caret-right {
+    display: none;
+    }
 
 }
