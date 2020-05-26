@@ -730,16 +730,27 @@ a#featuredpage {
 body.post-type-archive-el_events #page {
 	background:#f1ca61;
 }
-body.post-type-archive-el_events h1.the-title, body.single-el_events h1.the-title {
+body.single-el_events h1.the-title {
 	text-align: center;
 	color: #333333;
 	text-transform: uppercase;
 	font-weight: 800;
 	padding-bottom: 20px;
 }
+body.post-type-archive-el_events h1.the-title {
+    text-align: center;
+    color: #333333;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
 body.post-type-archive-el_events .agenda-container {
-	padding-bottom: 120px;
+	padding: 40px 0;
 	display: block;
+}
+
+body.post-type-archive-el_events #content.container  {
+    padding-top: 40px;
 }
 /* Single el_events */
 body.single-el_events #page {
