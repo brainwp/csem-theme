@@ -639,7 +639,6 @@ body.home .hero-content-style1 h2.hero-large-text {
 }
 .agenda-container .the-time {
 	color:#ad1f26;
-	text-transform:uppercase;
 	display: inline-block;
 	width: 100%;
 	clear: both;
@@ -1090,5 +1089,38 @@ body.archive .page-header h1.page-title, body.category .page-header h1.page-titl
     i.fa.fa-caret-left, i.fa.fa-caret-right {
     display: none;
     }
+
+    .agenda-container .each-agenda {
+        margin-bottom: 50px;
+    }
+
+    body.post-type-archive-el_events h1.the-title {
+    margin-bottom: 0px;
+    margin-top: 40px;
+    }
+
+    header#masthead .csem-open-menu {
+    width: 50px;
+    height: 50px;
+    }
+
+    header#masthead .csem-open-menu img {
+    width: 37px;
+    height: 37px;
+    margin-bottom: 18px;
+    }
+
+   .csem-open-menu.open img{
+    width: 37px;
+    height: 37px;
+    }
+
+    .csem-open-menu.open img.closed {
+    width: 37px !important;
+    height: 37px !important;
+    margin-left: 7px !important;
+    margin-bottom: 27px !important;
+    }
+
 
 }

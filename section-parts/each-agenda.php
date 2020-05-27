@@ -15,9 +15,9 @@
 			</div><!-- .the-thumb -->
 			<h4 class="the-time">
 				<?php if ( $meta = get_post_meta( get_the_ID(), 'starttime', true ) ) { ?>
-					<?php printf( __( 'A partir das %shrs', 'csem-theme' ), $meta ); ?>
+					<?php printf( __( 'A PARTIR DAS %sh', 'csem-theme' ), $meta ); ?>
 				<?php } else { ( $metafalse = get_post_meta( get_the_ID(), 'starttime', false ) ); ?>
-					<?php printf( __( 'Horario a definir', 'csem-theme' ), $metafalse ); ?>
+					<?php printf( __( 'HORARIO A DEFINIR', 'csem-theme' ), $metafalse ); ?>
 				<?php }; ?>
 			</h4><!-- .the-time -->
 		</div><!-- .col-md-4 each-agenda -->
